@@ -1,159 +1,153 @@
 <x-app-layout>
-    <div class="py-12" style="background-image: url('{{ asset("image/patas1.png") }}'); ">
-        <form class="pb-4 px-8 flex justify-end  items-center" action="">
-            <input class="rounded-md text-sm w-72 w-" type="text" placeholder="Busque por, clinícas ou categorias">
-            <button class="border-2 p-1 m-2 rounded-lg shadow-md">🔍</button>
-        </form>
-        <div class="flex z-0 flex-nowrap gap-2 bg-white p-4  overflow-x-scroll [&::-webkit-scrollbar]:hidden  mb-5">
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica Geral para Pequenos Animais</p>
-                <img class=" w-16 " src="{{ asset("image/pequeno.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica de Animais Exóticos</p>
-                <img class=" w-16 " src="{{ asset("image/exoticos.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica de Animais de Grande Porte</p>
-                <img class=" w-16 " src="{{ asset("image/grande.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica de Urgência/Emergência Veterinária</p>
-                <img class=" w-16 " src="{{ asset("image/25horas.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica Veterinária Especializada</p>
-                <img class=" w-16 " src="{{ asset("image/especializada.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica de Reprodução Animal</p>
-                <div class="flex justify-end items-end">
-                    <img class="w-18 h-16" src="{{ asset("image/reproducao.png") }}" alt="">
-                </div>
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica de Animais Selvagens e Resgate</p>
-                <img class=" w-16 " src="{{ asset("image/selvagens.png") }}" alt="">
-            </div>
-            <div class="flex bg-[#6C63FF] border hover:scale-90 transition border-[#6C63FF] min-w-[270px] rounded-lg">
-                <p class="text-sm text-white pl-2 pt-2">Clínica Veterinária Móvel</p>
-                <img class=" w-[100px] h-16 " src="{{ asset("image/movel.png") }}" alt="">
-            </div>
-        </div>
-
-         <!-- Cidade em que o usuário mora -->
-        <div class="flex m-5 gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-            </svg>  
-            <p>Guararapes - SP <br> <span class="text-sm text-slate-600">Clinícas na cidade onde mora</span></p>            
-        </div>
-
+    <div class="py-12" style="background-image: url('{{ asset("image/patas1.png") }}'); ">  
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-3 ">
-            <!-- Cards -->
+            <div class="flex mx-2">
+                <div>
+                    <img class="w-10 h-10 me-4 rounded-full border-2 border-[#6C63FF]" src="/image/reproducao.png" alt="">
+                    <p class="text-sm ml-1 text-[#6C63FF]">Zoe</p>
+                </div>
+            </div>
+
             <section class="bg-white overflow-hidden shadow-lg sm:rounded-lg p-3">
-                <div class="flex">
-                    <img class="w-14 rounded-full" src="{{ asset("image/clinica.png") }}" alt="">
-                  <div class="pl-2 w-5/6">
-                    <a href="{{route('clinica')}}" class="font-semibold">Cliníca PlanetPet</a> 
-                    <!-- estrelas -->
-                    <div class="flex">
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                        </svg> 
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                        </svg> 
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                <div class="mb-12 flex flex-col justify-center items-center mt-6">
+                    <p class="text-sm text-gray-700 mb-2">Adicione arquivos de seu pet</p>
+                    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-[#6C63FF] hover:bg-[#867ffe] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Adicionar arquivo <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                        </svg>
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                        </svg>
-                    </div>  
-                </div>  
-                   
-                <div class="flex justify-end items-top w-1/6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
+                        </button>
+                        
+                        <!-- Dropdown menu -->
+                        <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Camera</a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fotos ou imagens</a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">PDFs</a>
+                            </li>
+                           </ul>
+                        </div>
+    
                 </div>
-            </div>  
-                
-            <!-- Informações da clinica -->
-            <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, explicabo cupiditate repudiandae minima id, rem consectetur...</p>
-                <div class="flex pt-2">
-                    <p class="flex gap-1 text-sm font-semibold text-green-400">
-                        <svg class="w-4 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-                        </svg>
-                          
-                        Aberto 
-                    </p>
-                    <p class="text-sm pl-1 text-slate-500">▪ presencial, domicilio</p>
+                <h1>Arquivos de seu pet</h1>
+                <div class="flex gap-2 mt-4 p-2 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+                    <a href="#" class="p-1 h-7 border-2 border-[#6C63FF] bg-[#b2aefa] hover:scale-110 transition rounded-lg text-white text-sm">Todos</a>
+                    <a href="#" class="p-1 h-7 border-2 border-[#6C63FF] bg-[#b2aefa] hover:scale-110 transition rounded-lg text-white text-sm">Documentos</a>
+                    <a href="#" class="p-1 h-7 border-2 border-[#6C63FF] bg-[#b2aefa] hover:scale-110 transition rounded-lg text-white text-sm">Carteirinha</a>
+                    <a href="#" class="p-1 h-7 border-2 border-[#6C63FF] bg-[#b2aefa] hover:scale-110 transition rounded-lg text-white text-sm">Vacinas</a>
+                    <a href="#" class="p-1 h-7 border-2 border-[#6C63FF] bg-[#b2aefa] hover:scale-110 transition rounded-lg text-white text-sm">Outros</a>
                 </div>
 
-                <div class="flex gap-2 mt-3">
-                    <p class="text-[#6C63FF] bg-[#c4c1f9] p-1 rounded-md text-sm">Clinica geral</p>
-                    <p class="text-[#6C63FF] bg-[#c4c1f9] p-1 rounded-md text-sm">Dermatlogista</p>
+                <div class="grid sm:grid-cols-3 gap-3  flex-wrap mt-9 redond-md">
+                    <!-- Arquivos -->
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-600 mb-1">23 de agosto de 2024</p>
+                        <article class="border p-2">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <!-- opções -->
+                                <div class="flex justify-end items-end w-full">
+                                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+                                           <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                        </svg>
+                                    </button>
+                                        
+                                        <!-- Dropdown menu -->
+                                    <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+                                              <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Abrir arquivo</a>
+                                              </li>
+                                              <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Compartilhar arquivo</a>
+                                              </li>
+                                              <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Baixar arquivo</a>
+                                              </li>
+                                              <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar dados</a>
+                                              </li>
+                                              <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir arquivo</a>
+                                              </li>
+                                        </ul>
+                                    </div>                                        
+                                </div>
+                            </div>
+                            <p class="mt-2">carteirinha_zoe</p>
+                            <p class="mt-4 text-sm text-slate-500">Adicionado por Viviane</p>
+                        </article>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-600 mb-1">23 de agosto de 2024</p>
+                        <article class="border p-2">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <!-- opções -->
+                                <div class="flex justify-end items-end w-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2">receita_zoe</p>
+                            <p class="mt-6 text-sm text-slate-500">Adicionado por Viviane</p>
+                        </article>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-600 mb-1">23 de agosto de 2024</p>
+                        <article class="border p-2">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <!-- opções -->
+                                <div class="flex justify-end items-end w-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2">receita_zoe</p>
+                            <p class="mt-6 text-sm text-slate-500">Adicionado por Viviane</p>
+                        </article>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-600 mb-1">23 de agosto de 2024</p>
+                        <article class="border p-2">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <!-- opções -->
+                                <div class="flex justify-end items-end w-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2">receita_zoe</p>
+                            <p class="mt-6 text-sm text-slate-500">Adicionado por Viviane</p>
+                        </article>
+                    </div>
                 </div>
+
             </section>   
-            
-            <section class="bg-white overflow-hidden shadow-lg sm:rounded-lg p-3">
-                <div class="flex">
-                    <img class="w-14 rounded-full" src="{{ asset("image/clinica.png") }}" alt="">
-                  <div class="pl-2 w-5/6">
-                    <p class="font-semibold">Cliníca PlanetPet</p> 
-                    <!-- estrelas -->
-                    <div class="flex">
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                        </svg> 
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                        </svg> 
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                        </svg>
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                        </svg>
-                        <svg class="w-4 text-[#6C63FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                        </svg>
-                    </div>  
-                </div>  
-
-                <div class="flex justify-end items-top w-1/6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                </div>
-                   
-            </div>    
-            <!-- Informações da clinica -->
-            <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, explicabo cupiditate repudiandae minima id, rem consectetur...</p>
-                <div class="flex pt-2">
-                    <p class="flex gap-1 text-sm font-semibold text-green-400">
-                        <svg class="w-4 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-                        </svg>
-                          
-                        Aberto 
-                    </p>
-                    <p class="text-sm pl-1 text-slate-500">▪ presencial, domicilio</p>
-                </div>
-
-                <div class="flex gap-2 mt-3">
-                    <p class="text-[#6C63FF] bg-[#c4c1f9] p-1 rounded-md text-sm">Clinica geral</p>
-                    <p class="text-[#6C63FF] bg-[#c4c1f9] p-1 rounded-md text-sm">Dermatlogista</p>
-                </div>
-            </section>   
-    </div>
-</div>
-       
+        </div>
+    </div>  
 </x-app-layout>
+
+

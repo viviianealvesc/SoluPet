@@ -15,7 +15,6 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6 gap-4">
-              <a class="text-sm hover:scale-110 transition" href="{{ route('pets') }}">Pets</a>
               <a class="text-sm hover:scale-110 transition" href="#">Perfil</a>  
 
               <a href="{{ route('notificacoes') }}" class="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" >
