@@ -25,3 +25,10 @@ Os tutores poderão baixar a carteirinha digital do animal, contendo todas as va
 <strong>▪ Gerenciamento Centralizado:</strong> <p>Todas as informações sobre os animais serão centralizadas em um único sistema, facilitando o gerenciamento e a atualização dos dados.</p> 
 
 <h2>🔸 Tecnologias Utilizadas</h2>
+<div style="display: inline_block">
+  <img align="center" alt="vivi-tailwind" height="30" width="40" <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg">
+  <img align="center" alt="vivi-php" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
+  <img align="center" alt="vivi-laravel" height="70" width="70"  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-line-wordmark.svg" />
+  <img align="center" alt="vivi-sql" height="30" width="30"  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
+  <img align="center" alt="vivi-bd" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" /> 
+</div>
