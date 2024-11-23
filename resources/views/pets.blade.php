@@ -47,12 +47,6 @@
                                               <li>
                                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Baixar arquivo</a>
                                               </li>
-                                              <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar dados</a>
-                                              </li>
-                                              <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir arquivo</a>
-                                              </li>
                                         </ul>
                                     </div>                                        
                                 </div>

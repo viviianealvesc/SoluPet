@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PetsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,7 @@ Route::get('/home/clinica', function () {
     return view('clinica');
 })->middleware(['auth', 'verified'])->name('clinica');
 
-Route::get('/home/pets', function () {
-    return view('pets');
-})->middleware(['auth', 'verified'])->name('pets');
+Route::get('/home/pets', [PetsController::class, 'tutorAnimal'])->middleware(['auth', 'verified'])->name('pets');
 
 Route::get('/home/pets/lembrete', function () {
     return view('forms.lembrete');
