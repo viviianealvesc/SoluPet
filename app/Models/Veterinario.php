@@ -17,13 +17,13 @@ class Veterinario extends Model
 
     public function prontuarios() {
         
-        return $this->hasMany(Prontuario::class, 'id_prontuario');
+        return $this->hasMany(Prontuario::class);
  
     }
 
     public function aplicacoes() {
         
-        return $this->hasMany(Aplicacao::class, 'id_aplicacao');
+        return $this->hasMany(Aplicacao::class);
  
     }
 }

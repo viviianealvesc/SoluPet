@@ -21,19 +21,23 @@ class Aplicacao extends Model
 
     public function veterinario() {
         
-        return $this->belongsTo(Veterinario::class);
+        return $this->belongsTo(Veterinario::class, 'id_veterinario');  
  
     }
 
     public function material() {
         
-        return $this->belongsTo(Material::class);
+        return $this->belongsTo(Material::class, 'id_material');
  
+    }
+    
+    public function animal() {
+        return $this->belongsTo(Animal::class, 'id_animal');
     }
 
     public function dose() {
         
-        return $this->belongsTo(Dose::class);
+        return $this->belongsTo(Dose::class, 'id_dose');
  
     }
 }

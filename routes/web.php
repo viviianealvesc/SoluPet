@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PetsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -8,15 +9,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', [PetsController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/home/clinica', function () {
     return view('clinica');
 })->middleware(['auth', 'verified'])->name('clinica');
 
 Route::get('/home/pets', [PetsController::class, 'tutorAnimal'])->middleware(['auth', 'verified'])->name('pets');
+
+Route::get('/home/perfil', [PetsController::class, 'perfilPet'])->name('perfil');
+
+Route::get('/home/vacinas', [PetsController::class, 'vacinas'])->name('vacinas');
+
+Route::get('/home/prontuario', [PetsController::class, 'prontuario'])->name('prontuario');
 
 Route::get('/home/pets/lembrete', function () {
     return view('forms.lembrete');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aplicacao;
+use App\Models\Prontuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,19 +11,59 @@ class PetsController extends Controller
 {
     public function index()
     {
-        return view('pets');
+        $user = Auth::user();
+        $animais = $user->animais;
+        
+        return view('dashboard', compact('animais'));
     }
 
     public function tutorAnimal()
     {
+       $user = Auth::user();
+        $animais = $user->animais;
+
+   
+       return view('pets', compact('animais'));
+    }
+
+    public function perfilPet()
+    {
         $user = Auth::user();
+        $animais = $user->animais;
 
-        $animal = $user->animais;
-        $tutor = \DB::table('tutor')->where('user_id', $user->id)->first();
-        $animal = \DB::table('animais')->where('tutor_id', $tutor->id)->get();
+       return view('perfil', compact('animais'));
+    }
 
-        dd($animal);
+    
+    public function vacinas()
+    {
+        $user = Auth::user();
+        $animais = $user->animais;
 
-        return view('pets', ['animal' => $animal]);
+        $aplicacoes = collect();
+        foreach ($animais as $animal) {
+            $animalId = $animal->id;
+            $animalAplicacoes = Aplicacao::where('id_animal', $animalId)->get();
+            $aplicacoes = $aplicacoes->merge($animalAplicacoes);
+        }
+        
+       
+       return view('vacinas', compact('aplicacoes'));
+    }
+
+    public function prontuario()
+    {
+        $user = Auth::user();
+        $animais = $user->animais;
+   
+        $prontuarios = collect();
+        foreach($animais as $animal) {
+            $animalId = $animal->id;
+            $animalProntuarios = Prontuario::where('id_animal', $animalId)->get();
+            $prontuarios = $prontuarios->merge($animalProntuarios);
+        }
+       
+       return view('prontuario', compact('prontuarios'));
     }
 }
+

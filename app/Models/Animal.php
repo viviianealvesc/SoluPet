@@ -29,9 +29,12 @@ class Animal extends Model
         return $this->belongsTo(Especie::class, 'id_especie');
     }
 
+    public function aplicacoes() {
+        return $this->hasMany(Aplicacao::class, 'id_animal');
+    }
     
-   public function tutors() {
-        return $this->belongsToMany(Tutor::class, 'animal_tutor', 'animal_id', 'tutor_id');
+   public function tutor() {
+        return $this->belongsTo(Tutor::class, 'id_tutor');
     }
 
     public function prontuarios() {

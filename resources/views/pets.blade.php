@@ -2,10 +2,12 @@
     <div class="py-12" style="background-image: url('{{ asset("image/patas1.png") }}'); ">  
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-3 ">
             <div class="flex mx-2">
-                <div>
-                    <img class="w-10 h-10 me-4 rounded-full border-2 border-[#6C63FF]" src="/image/reproducao.png" alt="">
-                    <p class="text-sm ml-1 text-[#6C63FF]">Zoe</p>
-                </div>
+                @foreach ($animais as $animal)
+                    <div>
+                        <img class="w-10 h-10 me-4 rounded-full border-2 border-[#6C63FF]" src="/image/reproducao.png" alt="">
+                        <p class="text-xs ml-1 text-[#6C63FF]">{{$animal->nome}}</p>
+                    </div>
+                @endforeach
             </div>
 
             <section class="bg-white overflow-hidden shadow-lg sm:rounded-lg p-3">
