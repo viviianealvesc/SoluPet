@@ -34,6 +34,11 @@
                         <p>{{$animal->especie->nome_especie}}</p>
                     </div>
                 </div>
+                <div class="flex justify-end mt-4">
+                    <a href="{{ route('animal.download', ['id' => $animal->id]) }}" class="bg-[#7d77fe] hover:bg-[#918bff] text-white font-bold py-2 px-4 rounded">
+                        Baixar Informações
+                    </a>
+                </div>
         </div>
         @endforeach
     </div>

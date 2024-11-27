@@ -15,7 +15,7 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6 gap-4">
-              <a class="text-sm hover:scale-110 transition" href="/home/pets">Perfil</a>  
+              <a class="text-sm hover:scale-110 transition" href="/home/perfil">Perfil</a>  
             </div>
 
             <!-- Hamburger -->

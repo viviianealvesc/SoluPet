@@ -25,6 +25,8 @@ Route::get('/home/vacinas', [PetsController::class, 'vacinas'])->name('vacinas')
 
 Route::get('/home/prontuario', [PetsController::class, 'prontuario'])->name('prontuario');
 
+Route::get('/download/{id}', [PetsController::class, 'downloadAnimalInfo'])->name('animal.download');
+
 Route::get('/home/pets/lembrete', function () {
     return view('forms.lembrete');
 })->middleware(['auth', 'verified'])->name('lembrete');

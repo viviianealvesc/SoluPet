@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animal;
 use App\Models\Aplicacao;
 use App\Models\Prontuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class PetsController extends Controller
 {
@@ -64,6 +68,15 @@ class PetsController extends Controller
         }
        
        return view('prontuario', compact('prontuarios'));
+    }
+
+
+    public function downloadAnimalInfo($id)
+    {
+        $animal = Animal::findOrFail($id);
+
+        $pdf = Pdf::loadView('pdf', compact('animal'));
+        return $pdf->download('perfil_animal.pdf');
     }
 }
 
