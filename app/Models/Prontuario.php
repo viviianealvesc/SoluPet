@@ -12,6 +12,11 @@ class Prontuario extends Model
     protected $fillable = [
         'data',
         'diagnostico',
+        'motivoConsulta',
+        'sinaisClinicos',
+        'prescricao',
+        'procedimentosRealizados',
+        'observacoes',
         'id_veterinario',
         'id_animal',
     ];

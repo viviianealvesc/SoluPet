@@ -17,9 +17,39 @@
                     </div>
 
                     <div>
+                        <p class="font-semibold">Motivo da consulta:</p>
+                        <p>{{$prontuario->motivoConsulta}}</p>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold">Sinais clínicos:</p>
+                        <p>{{$prontuario->sinaisClinicos}}</p>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold">Prescrição:</p>
+                        <p>{{$prontuario->prescricao}}</p>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold">Procedimentos realizados:</p>
+                        <p>{{$prontuario->procedimentosRealizados}}</p>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold">Observações:</p>
+                        <p>{{$prontuario->observacoes}}</p>
+                    </div>
+
+                    <div>
                         <p class="font-semibold">Veterinario:</p>
                         <p>{{$prontuario->veterinario->nome}}</p>
                     </div>
+                </div>
+                <div class="flex justify-end mt-4">
+                    <a href="{{ route('prontuario.download', ['id' => $prontuario->id]) }}" class="bg-[#7d77fe] hover:bg-[#918bff] text-white font-bold py-2 px-4 rounded">
+                        Fazer Download do Prontuário
+                    </a>
                 </div>
             </div>
         @endforeach

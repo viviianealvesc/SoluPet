@@ -43,16 +43,15 @@ class PetsController extends Controller
     {
         $user = Auth::user();
         $animais = $user->animais;
-
+    
         $aplicacoes = collect();
         foreach ($animais as $animal) {
             $animalId = $animal->id;
             $animalAplicacoes = Aplicacao::where('id_animal', $animalId)->get();
             $aplicacoes = $aplicacoes->merge($animalAplicacoes);
         }
-        
-       
-       return view('vacinas', compact('aplicacoes'));
+    
+        return view('vacinas', compact('animais', 'aplicacoes'));
     }
 
     public function prontuario()
@@ -69,14 +68,22 @@ class PetsController extends Controller
        
        return view('prontuario', compact('prontuarios'));
     }
-
+    
 
     public function downloadAnimalInfo($id)
     {
-        $animal = Animal::findOrFail($id);
+        $animal = Animal::with('aplicacoes.veterinario', 'aplicacoes.material')->findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf', compact('animal'));
-        return $pdf->download('perfil_animal.pdf');
+        $pdf = Pdf::loadView('pdfPerfil', compact('animal'));
+        return $pdf->download('vacinas_animal.pdf');
+    }
+
+    public function downloadProntuario($id)
+    {
+        $prontuario = Prontuario::findOrFail($id);
+
+        $pdf = Pdf::loadView('pdf', compact('prontuario'));
+        return $pdf->download('prontuario_animal.pdf');
     }
 }
 

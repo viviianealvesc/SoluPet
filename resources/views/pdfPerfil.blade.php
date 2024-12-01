@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carteirinha do Animal</title>
+    <title>Vacinas do Animal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,10 +61,9 @@
         }
         .info-box {
             padding: 10px;
-            margin: 10px;
-            border: 1px solid #b2aeff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            background-color: #d8d6ff;
+            background-color: #f7fafc;
         }
         .info-box p {
             margin: 0;
@@ -74,44 +73,40 @@
 <body>
     <div class="container">
         <div class="text-center mb-6">
-            <h1 class="text-4xl font-bold text-gray-700">Prontuario do Animal</h1>
+            <h1 class="text-4xl font-bold text-gray-700">Vacinas do Animal</h1>
         </div>
-        <div class="grid grid-cols-2 text-lg">
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Nome:</p>
-                <p class="text-gray-800">{{ $prontuario->animal->nome }}</p>
-            </div>
+        @foreach($animal->aplicacoes as $aplicacao)
+        <div class="bg-white shadow-md rounded-lg p-6 my-6">
+            <h2 class="text-2xl font-bold mb-4">{{ $animal->nome }}</h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <p class="font-semibold">Data de aplicação:</p>
+                    <p>{{ \Carbon\Carbon::parse($aplicacao->data_aplicacao)->format('d/m/Y') }}</p>
+                </div> 
 
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Diagnostico:</p>
-                <p class="text-gray-800">{{ $prontuario->diagnostico }}</p>
-            </div>
+                <div>
+                    <p class="font-semibold">Quantidade de doses a serem tomadas:</p>
+                    <p>{{ $aplicacao->quantidade }}</p>
+                </div>
 
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Motivo da consulta:</p>
-                <p class="text-gray-800">{{ $prontuario->motivoConsulta }}</p>
-            </div>
+                <div>
+                    <p class="font-semibold">Veterinario:</p>
+                    <p>{{ $aplicacao->veterinario->nome }}</p>
+                </div>
 
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Sinais clínicos:</p>
-                <p class="text-gray-800">{{ $prontuario->sinaisClinicos }}</p>
+                <div>
+                    <p class="font-semibold">Numero de doses tomadas:</p>
+                    <p>{{ $aplicacao->numero_doses }}</p>
+                </div>
+              
+                <div>
+                    <p class="font-semibold">Nome da vacina:</p>
+                    <p>{{ $aplicacao->material->nome }}</p>
+                </div>
             </div>
-
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Prescrição:</p>
-                <p class="text-gray-800">{{ $prontuario->prescricao }}</p>
-            </div>
-
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Procedimentos realizados:</p>
-                <p class="text-gray-800">{{ $prontuario->procedimentosRealizados }}</p>
-            </div>
-
-            <div class="info-box">
-                <p class="font-semibold text-gray-600">Observações:</p>
-                <p class="text-gray-800">{{ $prontuario->observacoes }}</p>
-            </div>
+            <hr class="my-4">
         </div>
+        @endforeach
     </div>
 </body>
 </html>

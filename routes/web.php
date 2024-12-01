@@ -25,7 +25,9 @@ Route::get('/home/vacinas', [PetsController::class, 'vacinas'])->name('vacinas')
 
 Route::get('/home/prontuario', [PetsController::class, 'prontuario'])->name('prontuario');
 
-Route::get('/download/{id}', [PetsController::class, 'downloadAnimalInfo'])->name('animal.download');
+Route::get('/downloads/{id}', [PetsController::class, 'downloadProntuario'])->name('prontuario.download');
+
+Route::get('/download/{id}', [PetsController::class, 'downloadAnimalInfo'])->name('vacina.download');
 
 Route::get('/home/pets/lembrete', function () {
     return view('forms.lembrete');

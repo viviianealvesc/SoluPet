@@ -1,14 +1,11 @@
 <x-app-layout>
     <div class="container mx-auto p-8">
         <h1 class="text-3xl font-bold mb-4">Vacinas do Animal</h1>
-        @foreach($aplicacoes as $aplicacao)
+        @foreach($animais as $animal)
         <div class="bg-white shadow-md rounded-lg p-6 my-6">
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <p class="font-semibold">Nome:</p>
-                    <p>{{$aplicacao->animal->nome}}</p>
-                </div>
-
+            <h2 class="text-2xl font-bold mb-4">{{$animal->nome}}</h2>
+            @foreach($animal->aplicacoes as $aplicacao)
+            <div class="grid grid-cols-2 gap-4 mb-4">
                 <div>
                     <p class="font-semibold">Data de aplicação:</p>
                     <p>{{ \Carbon\Carbon::parse($aplicacao->data_aplicacao)->format('d/m/Y') }}</p>
@@ -34,8 +31,14 @@
                     <p>{{$aplicacao->material->nome}}</p>
                 </div>
             </div>
+            <hr class="my-4">
+            @endforeach
+            <div class="flex justify-end mt-4">
+                <a href="{{ route('vacina.download', ['id' => $aplicacao->id]) }}" class="bg-[#7d77fe] hover:bg-[#918bff] text-white font-bold py-2 px-4 rounded">
+                    Baixar Informações
+                </a>
+            </div>
         </div>
         @endforeach
     </div>
-
 </x-app-layout>

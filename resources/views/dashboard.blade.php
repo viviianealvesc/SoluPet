@@ -35,13 +35,8 @@
 
                     <article class="rounded-lg border mt-2 shadow-md bg-[#7d77fe] hover:scale-90 transition">
                         <a href="{{route('vacinas')}}">
-                            <div class="flex">
-                                <div class="w-full p-3">
-                                    <p class="text-sm text-white">2 vacinas <br> tomadas</p>
-                                </div>
-                                <div class="flex justify-end items-top p-3 w-full">
-                                    <h2 class="text-sm text-white font-semibold">Carteirinha</h2>
-                                </div>
+                            <div class="flex justify-end items-top p-3 w-full">
+                                <h2 class="text-sm text-white font-semibold">Carteirinhas</h2>
                             </div>
                             <img class="w-28 mt-1" src="{{ asset("image/patas.png") }}" alt="carteirinha">
                         </a>
@@ -50,13 +45,8 @@
 
                     <article class="rounded-lg border mt-2 shadow-md bg-[#7d77fe] hover:scale-90 transition">
                         <a href="{{route('prontuario')}}">
-                            <div class="flex">
-                                <div class="w-full p-3">
-                                    <p class="text-sm text-white">Nenhum prontuário cadastrado</p>
-                                </div>
-                                <div class="flex justify-end items-top p-3 w-full">
-                                    <h2 class="text-sm text-white font-semibold">Prontuário</h2>
-                                </div>
+                            <div class="flex justify-end items-top p-3 w-full">
+                                <h2 class="text-sm text-white font-semibold">Prontuários</h2>
                             </div>
                             <img class="w-28 mt-1" src="{{ asset("image/patas.png") }}" alt="carteirinha">
                         </a>
