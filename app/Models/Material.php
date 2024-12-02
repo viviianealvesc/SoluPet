@@ -13,7 +13,7 @@ class Material extends Model
         'nome',
         'descricao',
         'tipo_material',
-        'id_dose',
+        'numero_repeticoes',
     ];
 
     public function prontuarios() {

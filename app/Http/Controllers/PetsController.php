@@ -24,10 +24,23 @@ class PetsController extends Controller
     public function tutorAnimal()
     {
        $user = Auth::user();
-        $animais = $user->animais;
+       $animais = $user->animais;
 
-   
-       return view('pets', compact('animais'));
+       $aplicacoes = collect();
+       foreach ($animais as $animal) {
+           $animalId = $animal->id;
+           $animalAplicacoes = Aplicacao::where('id_animal', $animalId)->get();
+           $aplicacoes = $aplicacoes->merge($animalAplicacoes);
+       }
+
+       $prontuarios = collect();
+       foreach($animais as $animal) {
+           $animalId = $animal->id;
+           $animalProntuarios = Prontuario::where('id_animal', $animalId)->get();
+           $prontuarios = $prontuarios->merge($animalProntuarios);
+       }
+    
+       return view('pets', compact('aplicacoes', 'animais', 'prontuarios'));
     }
 
     public function perfilPet()
@@ -38,20 +51,13 @@ class PetsController extends Controller
        return view('perfil', compact('animais'));
     }
 
-    
+   
     public function vacinas()
     {
         $user = Auth::user();
-        $animais = $user->animais;
+        $animais = $user->animais()->with('aplicacoes.veterinario', 'aplicacoes.material')->get();
     
-        $aplicacoes = collect();
-        foreach ($animais as $animal) {
-            $animalId = $animal->id;
-            $animalAplicacoes = Aplicacao::where('id_animal', $animalId)->get();
-            $aplicacoes = $aplicacoes->merge($animalAplicacoes);
-        }
-    
-        return view('vacinas', compact('animais', 'aplicacoes'));
+        return view('vacinas', compact('animais'));
     }
 
     public function prontuario()

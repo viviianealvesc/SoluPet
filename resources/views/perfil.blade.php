@@ -6,6 +6,10 @@
             <h1 class="text-3xl font-bold mb-4">{{$animal->nome}}</h1>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
+                        <p class="font-semibold">Código do animal:</p>
+                        <p>{{$animal->id}}</p>
+                    </div>
+                    <div>
                         <p class="font-semibold">Nome:</p>
                         <p>{{$animal->nome}}</p>
                     </div>

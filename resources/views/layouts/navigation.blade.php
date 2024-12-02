@@ -15,8 +15,19 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6 gap-4">
-              <a class="text-sm hover:scale-110 transition" href="/home/perfil">Perfil</a>  
+              <a class="text-sm hover:scale-110 transition" href="/home/pets">Perfil</a>  
+
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a class="text-sm hover:scale-110 transition" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </a>
+            </form>
             </div>
+
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
